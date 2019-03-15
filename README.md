@@ -4,8 +4,8 @@
 go언어로 작성된 간단한 게시판입니다
 
 # DB 설정
-CREATE TABLE `txt` ( #게시글 저장
-  `id` int(11) NOT NULL AUTO_INCREMENT, #게시글 식별번호
+CREATE TABLE `txt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(20) NOT NULL,
   `time` bigint(20) DEFAULT NULL,
   `body` varchar(128) DEFAULT NULL,
