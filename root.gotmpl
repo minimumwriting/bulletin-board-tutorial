@@ -1,0 +1,30 @@
+<head>
+<meta content="text/html">
+<title>simple bulletin board</title>
+</head>
+<body>
+<header>
+{{if .IsLogin}}
+Welcome, {{.User}}!
+<a href='/logout'> logout </a>
+{{else}}
+<form action='/login' method='POST'>
+<span>id : </span>
+<span><input type='text' name='name' maxlength='10' required></span>
+<span>passwd : </span>
+<span><input type='password' name='passwd' maxlength='10' required></span>
+<span><input type='submit' value='login'></span>
+</form>
+<a href='/newuserform'> sign up </a>
+{{end}}
+</header>
+{{if .IsLogin}}
+<a href='/writeform'>write</a>
+{{end}}
+<table>
+{{$func := .TimeToString}}
+{{range .Contents}}
+<tr><td>{{.ID}}</td><td><a href="/show/{{.ID}}">{{.Title}}</a></td><td>By {{.Writer}}</td><td>{{.Time|call $func}}</td></tr>
+{{end}}
+</table>
+</body>
