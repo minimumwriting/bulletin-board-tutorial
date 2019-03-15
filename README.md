@@ -4,7 +4,7 @@
 go언어로 작성된 간단한 게시판입니다
 
 # DB 설정
-CREATE TABLE `txt` (
+CREATE TABLE `txt` ( 
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(20) NOT NULL,
   `time` bigint(20) DEFAULT NULL,
